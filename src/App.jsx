@@ -1,27 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Users, Trophy, Star, TrendingUp, Grid, Filter, X, Plus, Menu, Award, Zap, ChevronRight, ShoppingCart } from 'lucide-react';
 
 const SquadOS = () => {
   const [activeTab, setActiveTab] = useState('players');
   const [searchQuery, setSearchQuery] = useState('');
   const [players, setPlayers] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [selectedPlayer, setSelectedPlayer] = useState(null);
-  const [filters, setFilters] = useState({
-    position: '',
-    nationality: '',
-    league: '',
-    minRating: 0,
-    maxPrice: ''
-  });
-  const [showFilters, setShowFilters] = useState(false);
   const [squad, setSquad] = useState([]);
   const [userPoints, setUserPoints] = useState(1250);
   const [userLevel, setUserLevel] = useState(12);
   const [dailyStreak, setDailyStreak] = useState(5);
-  const [showRewards, setShowRewards] = useState(false);
 
-  // Mock player data structure (in production, this comes from EA Sports API)
+  // Mock player data structure
   const mockPlayers = [
     {
       id: 1,
@@ -181,7 +169,6 @@ const SquadOS = () => {
         p.position.toLowerCase().includes(query.toLowerCase())
       );
       setPlayers(filtered);
-      // Award points for searches
       if (filtered.length > 0) {
         setUserPoints(prev => prev + 5);
       }
@@ -193,7 +180,7 @@ const SquadOS = () => {
   const addToSquad = (player) => {
     if (squad.length < 11 && !squad.find(p => p.id === player.id)) {
       setSquad([...squad, player]);
-      setUserPoints(prev => prev + 25); // Reward for building squad
+      setUserPoints(prev => prev + 25);
     }
   };
 
@@ -233,13 +220,12 @@ const SquadOS = () => {
           <div><span>PHY</span>{player.physical}</div>
         </div>
         <div className="price">
-          <TrendingUp size={14} />
-          {player.price.toLocaleString()} coins
+          📈 {player.price.toLocaleString()} coins
         </div>
       </div>
       {!compact && (
         <button className="add-btn" onClick={(e) => { e.stopPropagation(); addToSquad(player); }}>
-          <Plus size={16} /> Add
+          ➕ Add to Squad
         </button>
       )}
     </div>
@@ -268,7 +254,6 @@ const SquadOS = () => {
           position: relative;
         }
 
-        /* Animated background effect */
         .fc-app::before {
           content: '';
           position: fixed;
@@ -291,7 +276,6 @@ const SquadOS = () => {
           66% { transform: translate(-20px, 20px) rotate(240deg); }
         }
 
-        /* Header */
         .header {
           position: sticky;
           top: 0;
@@ -354,7 +338,7 @@ const SquadOS = () => {
           left: 1rem;
           top: 50%;
           transform: translateY(-50%);
-          color: rgba(255, 255, 255, 0.5);
+          font-size: 1.2rem;
         }
 
         .user-stats {
@@ -374,11 +358,6 @@ const SquadOS = () => {
           font-weight: 600;
         }
 
-        .stat-item .icon {
-          color: #16c784;
-        }
-
-        /* Navigation */
         .nav-tabs {
           position: sticky;
           top: 73px;
@@ -438,7 +417,6 @@ const SquadOS = () => {
           to { transform: scaleX(1); }
         }
 
-        /* Main Content */
         .main-content {
           max-width: 1400px;
           margin: 0 auto;
@@ -475,7 +453,6 @@ const SquadOS = () => {
           transform: translateY(-2px);
         }
 
-        /* Players Grid */
         .players-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -646,7 +623,6 @@ const SquadOS = () => {
           transform: scale(1.05);
         }
 
-        /* Squad Builder */
         .squad-builder {
           background: rgba(20, 20, 35, 0.5);
           border: 1px solid rgba(255, 255, 255, 0.1);
@@ -694,7 +670,7 @@ const SquadOS = () => {
           align-items: center;
           justify-content: center;
           color: rgba(255, 255, 255, 0.3);
-          font-size: 0.9rem;
+          font-size: 2rem;
           transition: all 0.3s ease;
         }
 
@@ -727,7 +703,6 @@ const SquadOS = () => {
           background: rgba(239, 68, 68, 0.3);
         }
 
-        /* Rewards Section */
         .rewards-section {
           margin-top: 3rem;
         }
@@ -782,6 +757,7 @@ const SquadOS = () => {
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
+          font-size: 1.5rem;
         }
 
         .achievement-card.completed .achievement-icon {
@@ -810,7 +786,6 @@ const SquadOS = () => {
           color: #16c784;
         }
 
-        /* Progress Bar */
         .progress-bar {
           margin-top: 2rem;
           background: rgba(255, 255, 255, 0.05);
@@ -851,7 +826,6 @@ const SquadOS = () => {
           50% { opacity: 0.8; }
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
           .header-content {
             flex-wrap: wrap;
@@ -892,19 +866,19 @@ const SquadOS = () => {
           color: rgba(255, 255, 255, 0.5);
         }
 
-        .empty-state svg {
-          margin-bottom: 1rem;
-          opacity: 0.3;
+        .empty-state h2 {
+          font-size: 1.5rem;
+          margin-top: 1rem;
         }
       `}</style>
 
       {/* Header */}
       <div className="header">
         <div className="header-content">
-          <div className="logo">SQUAD<span style={{ color: '#6366f1' }}>OS</span></div>
+          <div className="logo">SQUAD<span>OS</span></div>
           
           <div className="search-bar">
-            <Search className="search-icon" size={20} />
+            <span className="search-icon">🔍</span>
             <input 
               type="text" 
               placeholder="Search players, clubs, nations..."
@@ -915,16 +889,13 @@ const SquadOS = () => {
 
           <div className="user-stats">
             <div className="stat-item">
-              <Zap className="icon" size={18} />
-              <span>{userPoints.toLocaleString()} pts</span>
+              ⚡ {userPoints.toLocaleString()} pts
             </div>
             <div className="stat-item">
-              <Award className="icon" size={18} />
-              <span>Lvl {userLevel}</span>
+              🏆 Lvl {userLevel}
             </div>
             <div className="stat-item">
-              <Star className="icon" size={18} />
-              <span>{dailyStreak} day streak</span>
+              ⭐ {dailyStreak} day streak
             </div>
           </div>
         </div>
@@ -937,29 +908,25 @@ const SquadOS = () => {
             className={`nav-tab ${activeTab === 'players' ? 'active' : ''}`}
             onClick={() => setActiveTab('players')}
           >
-            <Users size={18} />
-            Players
+            👥 Players
           </button>
           <button 
             className={`nav-tab ${activeTab === 'squad' ? 'active' : ''}`}
             onClick={() => setActiveTab('squad')}
           >
-            <Grid size={18} />
-            Squad Builder
+            ⚽ Squad Builder
           </button>
           <button 
             className={`nav-tab ${activeTab === 'rewards' ? 'active' : ''}`}
             onClick={() => setActiveTab('rewards')}
           >
-            <Trophy size={18} />
-            Rewards
+            🏆 Rewards
           </button>
           <button 
             className={`nav-tab ${activeTab === 'market' ? 'active' : ''}`}
             onClick={() => setActiveTab('market')}
           >
-            <TrendingUp size={18} />
-            Market
+            📈 Market
           </button>
         </div>
       </div>
@@ -969,10 +936,7 @@ const SquadOS = () => {
         {activeTab === 'players' && (
           <>
             <div className="filter-bar">
-              <button className="filter-btn" onClick={() => setShowFilters(!showFilters)}>
-                <Filter size={16} />
-                Filters
-              </button>
+              <button className="filter-btn">🔽 Filters</button>
               <button className="filter-btn">Position</button>
               <button className="filter-btn">League</button>
               <button className="filter-btn">Nation</button>
@@ -984,7 +948,7 @@ const SquadOS = () => {
                 <PlayerCard 
                   key={player.id} 
                   player={player}
-                  onClick={() => setSelectedPlayer(player)}
+                  onClick={() => {}}
                 />
               ))}
             </div>
@@ -1012,12 +976,12 @@ const SquadOS = () => {
                       className="remove-btn"
                       onClick={() => removeFromSquad(player.id)}
                     >
-                      Remove
+                      ❌ Remove
                     </button>
                   </div>
                 ) : (
                   <div key={i} className="squad-slot">
-                    <Plus size={32} />
+                    ➕
                   </div>
                 );
               })}
@@ -1041,8 +1005,7 @@ const SquadOS = () => {
             </div>
 
             <h2 className="section-title">
-              <Trophy size={28} />
-              Achievements
+              🏆 Achievements
             </h2>
 
             <div className="achievements-grid">
@@ -1053,7 +1016,7 @@ const SquadOS = () => {
                 >
                   <div className="achievement-header">
                     <div className="achievement-icon">
-                      {achievement.completed ? <Award size={24} /> : <Star size={24} />}
+                      {achievement.completed ? '🏅' : '⭐'}
                     </div>
                     <div className="achievement-info">
                       <h3>{achievement.title}</h3>
@@ -1061,8 +1024,7 @@ const SquadOS = () => {
                     </div>
                   </div>
                   <div className="achievement-points">
-                    <Zap size={16} />
-                    +{achievement.points} points
+                    ⚡ +{achievement.points} points
                     {achievement.completed && <span style={{ marginLeft: 'auto', color: '#16c784' }}>✓ Completed</span>}
                   </div>
                 </div>
@@ -1073,7 +1035,7 @@ const SquadOS = () => {
 
         {activeTab === 'market' && (
           <div className="empty-state">
-            <TrendingUp size={64} />
+            <div style={{ fontSize: '4rem' }}>📈</div>
             <h2>Market Analysis Coming Soon</h2>
             <p>Track player prices, market trends, and investment opportunities</p>
           </div>
