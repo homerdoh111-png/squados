@@ -26,7 +26,7 @@ const SquadOS = () => {
       defending: 45,
       physical: 88,
       price: 285000,
-      image: 'https://cdn.futgg.workers.dev/content/fifa25/playerheads/p239085.png',
+      image: 'https://cdn.sofifa.net/players/239/085/25_120.png',
       rarity: 'gold'
     },
     {
@@ -44,7 +44,7 @@ const SquadOS = () => {
       defending: 36,
       physical: 77,
       price: 450000,
-      image: 'https://cdn.futgg.workers.dev/content/fifa25/playerheads/p231747.png',
+      image: 'https://cdn.sofifa.net/players/231/747/25_120.png',
       rarity: 'gold'
     },
     {
@@ -62,7 +62,7 @@ const SquadOS = () => {
       defending: 64,
       physical: 78,
       price: 195000,
-      image: 'https://cdn.futgg.workers.dev/content/fifa25/playerheads/p192985.png',
+      image: 'https://cdn.sofifa.net/players/192/985/25_120.png',
       rarity: 'gold'
     },
     {
@@ -80,7 +80,7 @@ const SquadOS = () => {
       defending: 91,
       physical: 86,
       price: 125000,
-      image: 'https://cdn.futgg.workers.dev/content/fifa25/playerheads/p203376.png',
+      image: 'https://cdn.sofifa.net/players/203/376/25_120.png',
       rarity: 'gold'
     },
     {
@@ -98,7 +98,7 @@ const SquadOS = () => {
       defending: 78,
       physical: 84,
       price: 275000,
-      image: 'https://cdn.futgg.workers.dev/content/fifa25/playerheads/p252371.png',
+      image: 'https://cdn.sofifa.net/players/252/371/25_120.png',
       rarity: 'gold'
     },
     {
@@ -116,7 +116,7 @@ const SquadOS = () => {
       defending: 29,
       physical: 67,
       price: 380000,
-      image: 'https://cdn.futgg.workers.dev/content/fifa25/playerheads/p238794.png',
+      image: 'https://cdn.sofifa.net/players/238/794/25_120.png',
       rarity: 'gold'
     },
     {
@@ -134,7 +134,7 @@ const SquadOS = () => {
       defending: 87,
       physical: 86,
       price: 165000,
-      image: 'https://cdn.futgg.workers.dev/content/fifa25/playerheads/p231866.png',
+      image: 'https://cdn.sofifa.net/players/231/866/25_120.png',
       rarity: 'gold'
     },
     {
@@ -152,7 +152,7 @@ const SquadOS = () => {
       defending: 33,
       physical: 59,
       price: 95000,
-      image: 'https://cdn.futgg.workers.dev/content/fifa25/playerheads/p278789.png',
+      image: 'https://cdn.sofifa.net/players/278/789/25_120.png',
       rarity: 'gold'
     }
   ];
