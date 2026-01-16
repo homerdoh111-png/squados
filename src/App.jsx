@@ -26,7 +26,7 @@ const SquadOS = () => {
       defending: 45,
       physical: 88,
       price: 285000,
-      image: 'https://cdn.sofifa.net/players/239/085/25_120.png',
+      image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=200&h=300&fit=crop',
       rarity: 'gold'
     },
     {
@@ -44,7 +44,7 @@ const SquadOS = () => {
       defending: 36,
       physical: 77,
       price: 450000,
-      image: 'https://cdn.sofifa.net/players/231/747/25_120.png',
+      image: 'https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=200&h=300&fit=crop',
       rarity: 'gold'
     },
     {
@@ -62,7 +62,7 @@ const SquadOS = () => {
       defending: 64,
       physical: 78,
       price: 195000,
-      image: 'https://cdn.sofifa.net/players/192/985/25_120.png',
+      image: 'https://images.unsplash.com/photo-1614632537197-38a17061c2bd?w=200&h=300&fit=crop',
       rarity: 'gold'
     },
     {
@@ -80,7 +80,7 @@ const SquadOS = () => {
       defending: 91,
       physical: 86,
       price: 125000,
-      image: 'https://cdn.sofifa.net/players/203/376/25_120.png',
+      image: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=200&h=300&fit=crop',
       rarity: 'gold'
     },
     {
@@ -98,7 +98,7 @@ const SquadOS = () => {
       defending: 78,
       physical: 84,
       price: 275000,
-      image: 'https://cdn.sofifa.net/players/252/371/25_120.png',
+      image: 'https://images.unsplash.com/photo-1587384474964-3a06ce1ce699?w=200&h=300&fit=crop',
       rarity: 'gold'
     },
     {
@@ -116,7 +116,7 @@ const SquadOS = () => {
       defending: 29,
       physical: 67,
       price: 380000,
-      image: 'https://cdn.sofifa.net/players/238/794/25_120.png',
+      image: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=200&h=300&fit=crop',
       rarity: 'gold'
     },
     {
@@ -134,7 +134,7 @@ const SquadOS = () => {
       defending: 87,
       physical: 86,
       price: 165000,
-      image: 'https://cdn.sofifa.net/players/231/866/25_120.png',
+      image: 'https://images.unsplash.com/photo-1552667466-07770ae110d0?w=200&h=300&fit=crop',
       rarity: 'gold'
     },
     {
@@ -152,7 +152,7 @@ const SquadOS = () => {
       defending: 33,
       physical: 59,
       price: 95000,
-      image: 'https://cdn.sofifa.net/players/278/789/25_120.png',
+      image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=200&h=300&fit=crop',
       rarity: 'gold'
     }
   ];
